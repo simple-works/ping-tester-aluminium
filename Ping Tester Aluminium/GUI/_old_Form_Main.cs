@@ -9,20 +9,6 @@ namespace PingTesterAluminium
         public FormMain()
         {
             InitializeComponent();
-            this.EnableMovingByMouseDrag();
-
-            // Set Custom Font for Form
-            this.SetFont(Resources.visitor.ToFontFamily());
-
-            // Enable Hover Animation on Buttons
-            this.EnableButtonsHoverEffects();
-
-            // Set Custom Font for Buttons
-            button_settings.SetFont(this.Font);
-            button_about.SetFont(this.Font);
-            button_pause.SetFont(this.Font);
-
-            // Start Pinging Timer
             timerPing.Start();
         }
 
@@ -138,6 +124,11 @@ namespace PingTesterAluminium
         private void button_minimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void aluminiumButton1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

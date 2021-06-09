@@ -14,7 +14,7 @@ Simple ping utility for testing network connection latency.
 
 ## :rocket: Development
 - Language: **[C#](https://github.com/dotnet/csharplang) 4.0**
-- Framework: **[.NET](https://github.com/dotnet) Framework 4.0**
+- Framework: **[.NET](https://github.com/dotnet) Framework 4.0** / **[WinForms](https://github.com/dotnet/winforms)**
 - IDE: **[Visual Studio](https://github.com/microsoft) 2010**
 
 ## :page_facing_up: License

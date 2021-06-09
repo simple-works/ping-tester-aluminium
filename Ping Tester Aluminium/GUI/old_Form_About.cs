@@ -14,7 +14,7 @@ namespace PingTesterAluminium
             this.SetFont(Resources.visitor.ToFontFamily());
 
             // Enable Hover Animation on Buttons
-            this.EnableButtonsHoverEffects();
+            this.EnableHoverEffectsForChildButtons();
 
             // Set Copyright Infromations
             labelCopyright1.Text = Application.ProductName + " " + Application.ProductVersion;

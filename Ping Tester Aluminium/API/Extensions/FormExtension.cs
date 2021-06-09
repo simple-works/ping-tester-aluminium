@@ -10,26 +10,6 @@ namespace PingTesterAluminium
 {
     public static class FormExtension
     {
-        public static void EnableButtonsHoverEffects(this Form form)
-        {
-            foreach (Control control in form.Controls)
-            {
-                if (control is Button)
-                {
-                    Button button = (Button)control;
-                    Image backgroundImage = button.BackgroundImage;
-                    
-                    button.MouseEnter += (s, args) =>
-                    {
-                        button.BackgroundImage = null;
-                    };
-                    
-                    button.MouseLeave += (s, args) =>
-                    {
-                        button.BackgroundImage = backgroundImage;
-                    };
-                }
-            }
-        }
+
     }
 }

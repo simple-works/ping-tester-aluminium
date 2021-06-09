@@ -51,5 +51,20 @@ namespace PingTesterAluminium
                 control.Location = new Point((int)(0.5 * control.Parent.Width - 0.5 * control.Width), control.Location.Y);
             }
         }
+
+        public static void EnableHoverEffectsForChildButtons(this Control control)
+        {
+            foreach (Control childControl in control.Controls)
+            {
+                if (childControl is Button)
+                {
+                    (childControl as Button).EnableHoverEffects();
+                }
+                else if (childControl.HasChildren)
+                {
+                    childControl.EnableHoverEffectsForChildButtons();
+                }
+            }
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.labelCopyright2 = new System.Windows.Forms.Label();
             this.labelCopyright3 = new System.Windows.Forms.Label();
             this.labelCopyright4 = new System.Windows.Forms.Label();
+            this.aluminiumButton1 = new PingTesterAluminium.AluminiumButton();
             this.SuspendLayout();
             // 
             // button_ok
@@ -92,6 +93,19 @@
             this.labelCopyright4.TabIndex = 4;
             this.labelCopyright4.Text = "2019";
             // 
+            // aluminiumButton1
+            // 
+            this.aluminiumButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.aluminiumButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.aluminiumButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aluminiumButton1.Font = new System.Drawing.Font("Visitor TT1 BRK", 15F);
+            this.aluminiumButton1.Location = new System.Drawing.Point(136, 33);
+            this.aluminiumButton1.Name = "aluminiumButton1";
+            this.aluminiumButton1.Size = new System.Drawing.Size(296, 32);
+            this.aluminiumButton1.TabIndex = 5;
+            this.aluminiumButton1.Text = "aluminiumButton1";
+            this.aluminiumButton1.UseVisualStyleBackColor = false;
+            // 
             // FormAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(24F, 36F);
@@ -99,6 +113,7 @@
             this.BackgroundImage = global::PingTesterAluminium.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(538, 340);
+            this.Controls.Add(this.aluminiumButton1);
             this.Controls.Add(this.labelCopyright4);
             this.Controls.Add(this.labelCopyright3);
             this.Controls.Add(this.labelCopyright2);
@@ -126,6 +141,7 @@
         private System.Windows.Forms.Label labelCopyright2;
         private System.Windows.Forms.Label labelCopyright3;
         private System.Windows.Forms.Label labelCopyright4;
+        private AluminiumButton aluminiumButton1;
 
     }
 }

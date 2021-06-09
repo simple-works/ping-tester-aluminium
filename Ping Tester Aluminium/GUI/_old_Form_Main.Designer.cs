@@ -66,7 +66,7 @@
             this.label_rating.AutoSize = true;
             this.label_rating.BackColor = System.Drawing.Color.Transparent;
             this.label_rating.ForeColor = System.Drawing.Color.Gray;
-            this.label_rating.Location = new System.Drawing.Point(65, 180);
+            this.label_rating.Location = new System.Drawing.Point(74, 174);
             this.label_rating.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_rating.Name = "label_rating";
             this.label_rating.Size = new System.Drawing.Size(287, 36);
@@ -204,10 +204,6 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(24F, 36F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PingTesterAluminium.Properties.Resources.background;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(416, 376);
             this.Controls.Add(this.label_host);
             this.Controls.Add(this.button_pause);

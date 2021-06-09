@@ -10,7 +10,7 @@ namespace PingTesterAluminium
         {
             InitializeComponent();
             this.SetFont(Resources.visitor.ToFontFamily());
-            this.EnableButtonsHoverEffects();
+            this.EnableHoverEffectsForChildButtons();
             textBoxHost.Text = Settings.Default.Host;
             textBoxInterval.Text = Settings.Default.Interval.ToString();
         }

@@ -13,6 +13,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\Constants.cs" />
+    <Compile Include="API\Extensions\ButtonExtension.cs" />
+    <Compile Include="API\Extensions\ImageExtension.cs" />
     <Compile Include="API\PingTest.cs" />
     <Compile Include="API\PingResult.cs" />
     <Compile Include="API\Extensions\ByteExtension.cs" />
@@ -71,45 +74,75 @@
     <Compile Include="API\Extensions\FormExtension.cs" />
     <Compile Include="API\Extensions\ProgressBarExtension.cs" />
     <Compile Include="API\Extensions\StringExtension.cs" />
-    <Compile Include="GUI\AluminiumForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\AluminiumForm.Designer.cs">
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Components\AluminiumButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Components\AluminiumButton.Designer.cs">
+      <DependentUpon>AluminiumButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Components\AluminiumForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Components\AluminiumForm.Designer.cs">
       <DependentUpon>AluminiumForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_About.cs">
+    <Compile Include="GUI\Components\AluminiumLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Components\AluminiumLabel.Designer.cs">
+      <DependentUpon>AluminiumLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Components\AluminiumTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Components\AluminiumTextBox.Designer.cs">
+      <DependentUpon>AluminiumTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\old_Form_About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_About.Designer.cs">
-      <DependentUpon>Form_About.cs</DependentUpon>
+    <Compile Include="GUI\old_Form_About.Designer.cs">
+      <DependentUpon>old_Form_About.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_Settings.cs">
+    <Compile Include="GUI\_old_Form_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_Settings.Designer.cs">
-      <DependentUpon>Form_Settings.cs</DependentUpon>
+    <Compile Include="GUI\_old_Form_Settings.Designer.cs">
+      <DependentUpon>_old_Form_Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form_Main.cs">
+    <Compile Include="GUI\_old_Form_Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form_Main.Designer.cs">
-      <DependentUpon>Form_Main.cs</DependentUpon>
+    <Compile Include="GUI\_old_Form_Main.Designer.cs">
+      <DependentUpon>_old_Form_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\Form_Template.resx">
-      <DependentUpon>AluminiumForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_About.resx">
-      <DependentUpon>Form_About.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\old_Form_About.resx">
+      <DependentUpon>old_Form_About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_Settings.resx">
-      <DependentUpon>Form_Settings.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\_old_Form_Settings.resx">
+      <DependentUpon>_old_Form_Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form_Main.resx">
-      <DependentUpon>Form_Main.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\_old_Form_Main.resx">
+      <DependentUpon>_old_Form_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\AluminiumForm.resx">
+    <EmbeddedResource Include="GUI\Components\AluminiumForm.resx">
       <DependentUpon>AluminiumForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -139,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\icon.jpg" />
     <None Include="Resources\rectangle.png" />
     <None Include="Resources\minimize.png" />
     <None Include="Resources\close.png" />
@@ -171,6 +205,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
