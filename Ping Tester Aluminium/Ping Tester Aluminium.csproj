@@ -65,26 +65,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\Constants.cs" />
-    <Compile Include="API\Extensions\ButtonExtension.cs" />
+    <Compile Include="API\Extensions\Components Extensions\ButtonExtension.cs" />
     <Compile Include="API\Extensions\ImageExtension.cs" />
+    <Compile Include="API\PingRating.cs" />
     <Compile Include="API\PingTest.cs" />
     <Compile Include="API\PingResult.cs" />
     <Compile Include="API\Extensions\ByteExtension.cs" />
-    <Compile Include="API\Extensions\ControlExtension.cs" />
-    <Compile Include="API\Extensions\FormExtension.cs" />
-    <Compile Include="API\Extensions\ProgressBarExtension.cs" />
+    <Compile Include="API\Extensions\Components Extensions\ControlExtension.cs" />
+    <Compile Include="API\Extensions\Components Extensions\FormExtension.cs" />
+    <Compile Include="API\Extensions\Components Extensions\ProgressBarExtension.cs" />
     <Compile Include="API\Extensions\StringExtension.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="API\PingTestManager.cs" />
+    <Compile Include="GUI\Form_About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI\Form_About.Designer.cs">
+      <DependentUpon>Form_About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="GUI\Form_Error.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="GUI\Form_Error.Designer.cs">
+      <DependentUpon>Form_Error.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Components\AluminiumButton.cs">
       <SubType>Component</SubType>
@@ -110,40 +118,28 @@
     <Compile Include="GUI\Components\AluminiumTextBox.Designer.cs">
       <DependentUpon>AluminiumTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\old_Form_About.cs">
+    <Compile Include="GUI\Form_Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\old_Form_About.Designer.cs">
-      <DependentUpon>old_Form_About.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\_old_Form_Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\_old_Form_Settings.Designer.cs">
-      <DependentUpon>_old_Form_Settings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\_old_Form_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI\_old_Form_Main.Designer.cs">
-      <DependentUpon>_old_Form_Main.cs</DependentUpon>
+    <Compile Include="GUI\Form_Settings.Designer.cs">
+      <DependentUpon>Form_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_About.resx">
+      <DependentUpon>Form_About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\old_Form_About.resx">
-      <DependentUpon>old_Form_About.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_Error.resx">
+      <DependentUpon>Form_Error.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\_old_Form_Settings.resx">
-      <DependentUpon>_old_Form_Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\_old_Form_Main.resx">
-      <DependentUpon>_old_Form_Main.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Components\AluminiumForm.resx">
       <DependentUpon>AluminiumForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Form_Settings.resx">
+      <DependentUpon>Form_Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -6,51 +6,27 @@ namespace PingTesterAluminium
 {
     public static class PingTest
     {
-        public static PingResult Ping(string host)
+        public static PingResult Run(string host, int timeout = 5000,
+            int bufferLength = 32, int ttl = 128, bool dontFragment = false)
         {
-            if (host.IsEmpty() || !host.IsValidHost())
-            {
-                host = "google.com";
-            }
-            PingReply pingReply = null;
             try
             {
-                pingReply = new Ping().Send(host);
-            }
-            catch (Exception exception) 
-            {
-                return new PingResult(-1, "Error", Color.DarkRed, exception.Message, host);
+                if (timeout < 0) timeout = 0;
 
-            }
-            if (pingReply.Status != IPStatus.Success)
-            {
-                return new PingResult((int)pingReply.RoundtripTime, "No Response",
-                    Color.Gray, pingReply.Status.ToString(), host);
-            }
-            else
-            {
-                return new PingResult((int)pingReply.RoundtripTime, GetRating(pingReply.RoundtripTime),
-                    GetColor(pingReply.RoundtripTime), pingReply.Status.ToString(), host);
-            }
-        }
+                if (bufferLength < 0) bufferLength = 0;
+                if (bufferLength > 65500) bufferLength = 65500;
 
-        public static string GetRating(long time)
-        {
-            if (time <= 30)     return "Amazing";
-            if (time <= 60)     return "Excellent";
-            if (time <= 100)    return "Good";
-            if (time <= 150)    return "Not Bad";
-            if (time <= 200)    return "Bad";
-            if (time <= 250)    return "Mediocre";
-            if (time <= 300)    return "Poor";
-                                return "Terrible";
-        }
+                if (ttl < 0) ttl = 0;
+                if (ttl > 255) ttl = 255;
 
-        private static Color GetColor(long time)
-        {
-            if (time <= 100)    return Color.Green;
-            if (time <= 150)    return Color.Yellow;
-                                return Color.Red;
+                PingReply reply = new Ping().Send(host, timeout, new byte[bufferLength],
+                    new PingOptions(ttl, dontFragment));
+                return new PingResult(reply);
+            }
+            catch (Exception exception)
+            {
+                return new PingResult(exception.Message);
+            }
         }
     }
 }

@@ -23,5 +23,12 @@ namespace PingTesterAluminium
         {
             SendMessage(progressBar.Handle, 1040, (IntPtr)state, IntPtr.Zero);
         }
+
+        public static void SetValue(this ProgressBar progressBar, int value)
+        {
+            if (value < progressBar.Minimum) value = progressBar.Minimum;
+            if (value > progressBar.Maximum) value = progressBar.Maximum;
+            progressBar.Value = value;
+        }
     }
 }

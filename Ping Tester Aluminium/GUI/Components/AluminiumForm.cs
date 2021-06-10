@@ -29,11 +29,11 @@ namespace PingTesterAluminium
         {
             get
             {
-                return this.button_settings.Visible;
+                return this.button_about.Visible;
             }
             set
             {
-                this.button_settings.Visible = value;
+                this.button_about.Visible = value;
             }
         }
 
